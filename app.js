@@ -10,9 +10,9 @@ server.use(cors());
 let con = mysql.createConnection({
   pool: true,
   host: "remotemysql.com",
-  user: "aDd5mXxEO1",
-  password: "zeJHlTdwiL",
-  database: "aDd5mXxEO1"
+  user: "username,
+  password: "password",
+  database: "database"
 });
 
 con.connect(function(err) {
@@ -26,7 +26,7 @@ let transporter = nodemailer.createTransport({
   secure: false, // use TLS
   auth: {
     user: "self@theaniruddha.in",
-    pass: "password2019"
+    pass: "password"
   }
 });
 
