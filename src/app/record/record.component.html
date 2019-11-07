@@ -1,0 +1,19 @@
+<div style="width: 100% !important; font-size: 1.6rem;text-align: center;margin: auto !important;">This console
+  refreshes every {{time}} seconds !
+</div><br>
+<div style="width: 100% !important; font-size: 1.2rem;text-align: center;margin: auto !important;">
+  <table style="margin: auto;">
+    <tr>
+      <th>Sl. No.</th>
+      <th>Fingerprint Name</th>
+      <th>Action</th>
+      <th>Time Stamp</th>
+    </tr>
+    <tr *ngFor="let data of records">
+      <td>{{data.row}}</td>
+      <td>{{data.name}} [{{data.id}}]</td>
+      <td>{{data.action}}</td>
+      <td>{{data.timestamp}}</td>
+    </tr>
+  </table>
+</div>
