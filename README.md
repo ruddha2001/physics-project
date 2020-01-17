@@ -1,27 +1,19 @@
-# PhysicsProject
+# Physics Project for Tecknow 2019
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Note: This project won the 'Best Project' award!
 
-## Development server
+I created this project for my Semiconductor Physics Semester Project. This project was presented at the **Tecknow 2019 Science Project Demonstration** hosted by the **Department of Physics at SRM Institute of Science and Technology**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I used an **Arduino UNO 3** coupled to a **modified Servo Motor** as the basic necessities for this project. It was essentially a fingerprint door locking system, suited for traditional door bolts seen in India.
 
-## Code scaffolding
+The basic components are:
+* Arduino UNO R3
+* R307 Fingerprint Sensor
+* Modified Servo Motor (to enable 360° rotation)
+* A Node.js Server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The R307 Sensor Module took up most of the heavy lifting of capturing, storing and matching fignerprint data. The Arduino, based on the digital output of the sensor instructed the motor to lock/unlock the bolt.
 
-## Build
+The Node.js server used a npm package named [serialport.io](https://github.com/serialport/node-serialport) to read data directly from the Arduino Serial Console and log entries to a MySQL database.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+In case of three consecutive wrong entries, [nodemailer](https://nodemailer.com/about/) to send out alerts to pre-defined email addresses.
